@@ -9,9 +9,9 @@ class FileNamingKebabCaseLint extends DartLintRule {
           code: const LintCode(
             name: 'file_naming_kebab_case',
             problemMessage:
-                'File names should use hyphens (-) instead of underscores (_) and be in lowercase.',
+                'The file name {0} isn\'t a lower-kebab-case identifier.',
             correctionMessage:
-                'Rename the file to use hyphens and lowercase letters.',
+                'Try changing the name to follow the lower-kebab-case-with.',
           ),
         );
 
