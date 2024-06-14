@@ -1,39 +1,33 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# jsdaddy_custom_lints
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+`jsdaddy_custom_lints` is a Dart package designed to enforce a custom lint rule that ensures file names follow the kebab-case convention. This package is useful for maintaining consistent file naming conventions across your Dart and Flutter projects.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Enforces file names to be in lowercase and use hyphens (`-`) instead of underscores (`_`).
+- Integrates with the `custom_lint` package to provide real-time linting in your IDE.
 
-## Getting started
+## Installation
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add `jsdaddy_custom_lints` to your `pubspec.yaml` file:
 
+```yaml
+dev_dependencies:
+  jsdaddy_custom_lints:
+    git:
+        url: https://github.com/JsDaddy/dart-linter-rules
+```
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+To use the custom lint rule, add the following configuration to your `analysis_options.yaml` file:
 
-```dart
-const like = 'sample';
+```yaml
+analyzer:
+  plugins:
+    - custom_lint
+custom_lint:
+  enable_all_lint_rules: false
+  rules:
+    - file_naming_kebab_case
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+This configuration will enable the file_naming_kebab_case rule, ensuring that all Dart files are checked for compliance with the kebab-case naming convention.

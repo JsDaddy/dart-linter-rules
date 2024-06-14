@@ -24,8 +24,6 @@ class FileNamingKebabCaseLint extends DartLintRule {
     ErrorReporter reporter,
     CustomLintContext context,
   ) async {
-    print('FileNamingLint rule is running');
-
     final ResolvedUnitResult unit = await resolver.getResolvedUnitResult();
     final String fileName = unit.unit.declaredElement?.source.shortName ?? '';
     if (!_isValidFileName(fileName)) {
