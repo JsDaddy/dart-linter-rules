@@ -9,7 +9,7 @@ class FileNamingKebabCaseLint extends DartLintRule {
           code: const LintCode(
             name: 'file_naming_kebab_case',
             problemMessage:
-                'The file name {0} isn\'t a lower-kebab-case identifier.',
+                'The file name isn\'t a lower-kebab-case identifier.',
             correctionMessage:
                 'Try changing the name to follow the lower-kebab-case-with.',
           ),
